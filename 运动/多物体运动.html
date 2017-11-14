@@ -25,8 +25,37 @@
        }
     </style>
 </head>	
-</head>
 <body>
-
+	<ul>
+		<li id = "li1"></li>
+		<li id = "li2"></li>
+	</ul>
+	<script>
+   window.onload = function(){
+       // var aLi = document.getElementsByTagName("li");
+       // for(var i = 0;i < aLi.length;i++){
+       //  aLi[i].timer = null; 
+       //  aLi[i].onmouseover = function(){
+       //        startMove(this,400);
+       //  }
+       //  aLi[i].onmouseout = function(){
+       //        startMove(this,200);
+       //  }
+       // }
+       var Li1 = document.getElementById("li1");
+       var Li2 = document.getElementById("li2");
+       Li1.onmouseover = function(){
+            startMove(this,"opacity",100);
+       }
+       Li1.onmouseout = function(){
+            startMove(this,"opacity",20);
+       }
+       Li2.onmouseover = function(){
+            startMove(this,"height",400);
+       }
+       Li2.onmouseout = function(){
+            startMove(this,"height",50);
+       }
+   }
 </body>
 </html>
