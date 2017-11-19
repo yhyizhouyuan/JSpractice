@@ -36,5 +36,41 @@
   <div></div>
   <div></div>
   <div></div>
+  <script type="text/javascript">
+  	window.onload = function(){
+      	var oDiv = document.getElementsByTagName("div");
+        for(var i = 0;i < oDiv.length;i++){
+        oDiv[i].alpha =20;
+        // oDiv[i].timer = null;
+      	oDiv[i].onmouseover = function(){
+              startMove(this,100);
+      	}
+      	oDiv[i].onmouseout = function(){
+              startMove(this,20);
+      	}
+       }
+      }
+      // var timer = null,
+       //var alpha = 20;
+      function startMove(obj,iTarget){
+      	clearInterval(obj.timer);
+      	 // var oDiv = document.getElementById("div1");
+      	obj.timer = setInterval(function(){
+      	 	if(obj.alpha > iTarget){
+      	 		speed = -10;
+      	 	}else{
+      	 		speed = 10;
+      	 	}
+      	 	if(obj.alpha == iTarget){
+      	 		clearInterval(obj.timer);
+      	 	}else{
+                obj.alpha+=speed;
+                obj.style.filter = "obj.alpha(opacity:"+obj.alpha+")";
+                obj.style.opacity = obj.alpha/100;
+      	 	}
+              
+      	 },30)
+      	}
+  </script>
 </body>
 </html>
