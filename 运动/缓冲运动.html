@@ -29,5 +29,29 @@
 </head>
 <body>
 <div id="div1"><span id="share">分享</span></div>
+<script>
+      window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            oDiv.onmouseover = function(){
+                  Move(0);
+            }
+            oDiv.onmouseout = function(){
+            Move(-200);
+            }
+      }
+      var timer = null;
+      function Move(iTarget){
+            clearInterval(timer);
+            var oDiv = document.getElementById("div1");     
+                timer = setInterval(function(){  
+                var speed = (iTarget - oDiv.offsetLeft)/20;
+                speed = speed > 0?Math.ceil(speed):Math.floor(speed);
+                  if(oDiv.offsetLeft == iTarget){
+                        clearInterval(timer);
+                  }else{
+                  oDiv.style.left = oDiv.offsetLeft + speed +"px";
+            }},30)
+      }
+</script>
 </body>
 </html>
