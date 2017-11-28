@@ -31,6 +31,21 @@
   .wrap ol .on{background:#E97305;
                color:#fff;}
   </style>
+  <script type="text/javascript">
+     window.onload=function(){
+    var wrap=document.getElementById('wrap'),
+        pic=document.getElementById('pic').getElementsByTagName("li"),
+        list=document.getElementById('list').getElementsByTagName('li'),
+        index=0,
+        timer=null;
+      // 定义并调用自动播放函数
+    timer = setInterval(autoPlay, 2000);
+     
+     // 鼠标划过整个容器时停止自动播放
+    wrap.onmouseover = function () {
+      clearInterval(timer);
+    }
+  </script>
 </head>
 <body>
  <div class="wrap" id='wrap'>
