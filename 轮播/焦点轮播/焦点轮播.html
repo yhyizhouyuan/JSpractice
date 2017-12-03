@@ -54,7 +54,28 @@
 		#buttons .on{
 			background-color: red;
 		}
-		
+		.arrow{
+			cursor: pointer;
+			display: none;
+			line-height: 62px;
+			text-align: center;
+			font-size: 22px;
+			font-weight: bold;
+			width: 28px;
+			color: #fff;
+			height: 68px;
+			top: 180px;
+			position: absolute;
+			z-index: 2;
+			background-color: RGBA(0,0,0,.3);
+		}
+		.arrow:hover{
+			background-color: rgba(0,0,0,.7);
+		}
+		#container:hover .arrow{
+			display: block;
+		}
+		#next{right: 0px;}
 	</style>
 </head>
 <body>
@@ -75,5 +96,22 @@
 		<span index="5" >5</span>
 		<span index="6" >6</span>
 	</div>
+	<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+	<a href="javascript:;" id="next" class="arrow">&lt;</a>
+</div>
+<script type="text/javascript">
+	window.onload=function(){
+		var container=document.getElementById("container");
+		var list=document.getElementById("list");
+		var buttons=document.getElementById("buttons").getElementsByTagName("span");
+		var prev=document.getElementById("prev");
+		var next=document.getElementById("next");
+		var index=1;
+        var animated=false;
+        var len=6;
+        var timer;
+        var interval=3000;
+
+</script>
 </body>
 </html>
