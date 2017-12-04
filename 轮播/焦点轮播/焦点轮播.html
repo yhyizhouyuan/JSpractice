@@ -111,6 +111,38 @@
         var len=6;
         var timer;
         var interval=3000;
+/**************************左右剪头点击事件**************/
+        function animate(offset){
+        	if (offset==0){
+        		return;
+        	}
+        	animated=true;
+        	var time=500;//位移总时间
+        	var interval=10;//位移时间间隔
+        	var speed=offset/(time/interval);;//每次位移量
+        	var newleft=parseInt(list.style.left)+offset;
+        	 var go = function(){
+                if( (speed < 0 && parseInt(list.style.left) > newleft) || (speed >0 && parseInt(list.style.left) < newleft)){
+                    list.style.left = parseInt(list.style.left) + speed +"px";
+                    setTimeout(go,inteval);
+                }
+                else{
+                    list.style.left=newleft+"px";
+                    if(newleft>-200){
+                          list.style.left=-730 * len + "px";
+                 }
+                    if(newleft<(-730*len)){
+                          list.style.left="-730px";
+                 }
+                  animated=false;
+                }
+            }
+            go();
+          
+	}
+
+
+        }
 
 </script>
 </body>
