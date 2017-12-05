@@ -138,9 +138,51 @@
                 }
             }
             go();
-          
-	}
 
+	}
+  /*******************改变button背景色*******************/
+        function showButton(){
+        	for (var i=0;i<buttons.length;i++){
+        		if (buttons[i].className=="on") {
+        			buttons[i].className="";
+        			break;
+        		}
+        	}
+        	buttons[index-1].className="on";
+        }
+            function play(){
+            	timer=setTimeout(function(){
+            		next.onclick();
+            		play();
+            	},interval);
+            }
+            function stop(){
+            	clearTimeout(timer);
+            }
+            next.onclick=function(){
+            if(animated){
+                return;
+            }
+	    	if(index == 6){
+	    		index=0;
+	    	}else{
+	    	     index+=1;
+            }
+         	animate(-730);
+            showButton();
+	    }
+	    prev.onclick=function(){
+            if(animated){
+                return;
+            }
+	    	if(index == 1){
+	    		index=7;
+	    	}else{
+	    	index-=1;
+        }
+	    	
+	    	animate(730);
+            showButton();
 
         }
 
