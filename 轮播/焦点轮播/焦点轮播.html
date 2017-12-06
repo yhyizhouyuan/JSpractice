@@ -1,109 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<title>Document</title>
-	<style type="text/css">
-		*{
-			margin: 0;
-			padding: 0;
-			text-decoration: none;
-		}
-		body{
-			padding: 20px;
-		}
-		#contianer{
-			width: 730px;
-			height: 400px;
-			overflow: hidden;
-			position: relative;
-		}
-		#list{
-			width: 580px;
-			height: 400px;
-			position: absolute;
-			z-index: 1;
-		}
-		#list img{
-			float: left;
-		}
-		#buttons{
-			buttom:20px;
-			left: 300px;
-			height: 10px;
-			width: 140px;
-			z-index: 2;
-			position: absolute;
-		}
-		#buttons span{
-			cursor: pointer;
-			float: left;
-			width: 15px;
-			height: 15px;
-			border-radius: 50%;
-			margin-right: 5px;
-			text-align: center;
-			font-size: 12px;
-			font-weight: bold;
-			color: #fff;
-			background-color: #333;
-		}
-		#buttons span:hover{
-			background-color: red;
-		}
-		#buttons .on{
-			background-color: red;
-		}
-		.arrow{
-			cursor: pointer;
-			display: none;
-			line-height: 62px;
-			text-align: center;
-			font-size: 22px;
-			font-weight: bold;
-			width: 28px;
-			color: #fff;
-			height: 68px;
-			top: 180px;
-			position: absolute;
-			z-index: 2;
-			background-color: RGBA(0,0,0,.3);
-		}
-		.arrow:hover{
-			background-color: rgba(0,0,0,.7);
-		}
-		#container:hover .arrow{
-			display: block;
-		}
-		#next{right: 0px;}
-	</style>
+	<style>
+        *{
+        	margin: 0;
+        	padding: 0;
+        	text-decoration:none;
+        }
+        body {
+        	padding: 20px;
+        } 
+        #container {
+        	width: 730px;
+        	height: 400px;
+        	overflow: hidden;
+        	position: relative;
+        }
+        #list {
+        	width: 5840px;
+        	height: 400px;
+        	position: absolute;
+        	z-index: 1;       
+        }#list img {
+        	float: left;
+        }
+        #buttons {
+        	bottom: 20px;
+        	left: 300px;
+        	height: 10px;
+        	width: 140px;
+        	z-index: 2;
+            position: absolute;
+        }
+        #buttons span {
+        	cursor: pointer;
+        	float: left;
+        	width: 15px;
+        	height: 15px;
+        	border-radius: 50%;
+        	margin-right: 5px;
+            text-align: center;
+        	font-size: 12px;
+        	font-weight: bold;
+        	color: #fff;
+        	background-color: #333;
+        }
+       
+        #buttons span:hover {
+        	background-color: red
+        }
+        #buttons .on{
+            background-color: red;
+        }
+        .arrow {
+        	cursor: pointer;
+        	display: none;
+        	line-height: 62px;
+        	text-align: center;
+        	font-size: 22px;
+        	font-weight: bold;
+        	width: 28px;
+        	color: #fff;
+        	height: 68px;
+        	top:180px;
+        	position: absolute;
+        	z-index: 2;
+        	background-color: RGBA(0,0,0,.3);
+        }
+        .arrow:hover {
+             background-color: RGBA(0,0,0,.7);
+        }
+        #container:hover .arrow{
+        	display: block;
+        }        
+        #next{right:0px;}
+   	</style>
 </head>
 <body>
 <div id="container">
-	<div id="list" style="left: -730px">
-		<img src="1.jpg" alt="1">
-		<img src="2.jpg" alt="2">
-		<img src="3.jpg" alt="3">
-		<img src="4.jpg" alt="4">
-		<img src="5.jpg" alt="5">
-		<img src="6.jpg" alt="6">
+    <div id="list" style="left:-730px">
+        <img src="66.jpg" alt="6">
+	    <img src="11.jpg" alt="1">
+		<img src="22.jpg" alt="2">
+		<img src="33.jpg" alt="3">
+		<img src="44.jpg" alt="4">
+		<img src="55.jpg" alt="5">
+		<img src="66.jpg" alt="6">
+		<img src="11.jpg" alt="1">
 	</div>
-	<div id="buttons">
-		<span index="1" class="on">1</span>
-		<span index="2" >2</span>
-		<span index="3" >3</span>
-		<span index="4" >4</span>
-		<span index="5" >5</span>
-		<span index="6" >6</span>
+    <div id="buttons">
+	    <span index="1" class="on">1</span>
+	    <span index="2">2</span>
+	    <span index="3">3</span>
+	    <span index="4">4</span>
+	    <span index="5">5</span>
+	    <span index="6">6</span>
 	</div>
-	<a href="javascript:;" id="prev" class="arrow">&lt;</a>
-	<a href="javascript:;" id="next" class="arrow">&lt;</a>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
 </div>
-<script type="text/javascript">
+<script>
 	window.onload=function(){
 		var container=document.getElementById("container");
-		var list=document.getElementById("list");
-		var buttons=document.getElementById("buttons").getElementsByTagName("span");
+		var  list=document.getElementById("list");
+		var  buttons=document.getElementById("buttons").getElementsByTagName("span");
 		var prev=document.getElementById("prev");
 		var next=document.getElementById("next");
 		var index=1;
@@ -113,15 +115,15 @@
         var interval=3000;
 /**************************左右剪头点击事件**************/
         function animate(offset){
-        	if (offset==0){
-        		return;
-        	}
-        	animated=true;
-        	var time=500;//位移总时间
-        	var interval=10;//位移时间间隔
-        	var speed=offset/(time/interval);;//每次位移量
-        	var newleft=parseInt(list.style.left)+offset;
-        	 var go = function(){
+            if(offset==0){
+                return;
+            } 
+            animated=true;          
+            var time=500; //位移总时间
+            var inteval=10;//位移时间间隔
+            var speed=offset/(time/inteval);//每次位移量
+            var newleft=parseInt(list.style.left)+offset;
+            var go = function(){
                 if( (speed < 0 && parseInt(list.style.left) > newleft) || (speed >0 && parseInt(list.style.left) < newleft)){
                     list.style.left = parseInt(list.style.left) + speed +"px";
                     setTimeout(go,inteval);
@@ -138,28 +140,28 @@
                 }
             }
             go();
-
+          
 	}
-  /*******************改变button背景色*******************/
-        function showButton(){
-        	for (var i=0;i<buttons.length;i++){
-        		if (buttons[i].className=="on") {
-        			buttons[i].className="";
-        			break;
-        		}
-        	}
-        	buttons[index-1].className="on";
+    /*******************改变button背景色*******************/
+        function showButton() {
+            for(var i=0;i<buttons.length;i++){
+                if( buttons[i].className == "on"){
+                    buttons[i].className = "";
+                    break;
+            }
+          }
+        buttons[index-1].className = "on";
+    }
+        function play() {
+            timer = setTimeout(function() {
+                next.onclick();
+                play();
+            },interval);
         }
-            function play(){
-            	timer=setTimeout(function(){
-            		next.onclick();
-            		play();
-            	},interval);
-            }
-            function stop(){
-            	clearTimeout(timer);
-            }
-            next.onclick=function(){
+        function stop(){
+            clearTimeout(timer);
+        }
+	    next.onclick=function(){
             if(animated){
                 return;
             }
@@ -183,9 +185,27 @@
 	    	
 	    	animate(730);
             showButton();
-
-        }
-
+	    }
+    /*********************************buttons***********************/
+    for(var i=0; i<buttons.length;i++){
+              buttons[i].onclick=function(){
+                if(animated){
+                return;
+            }
+                if(this.className=="on"){
+                    return;
+                }
+                   var myIndex =parseInt(this.getAttribute("index"));
+                   var offset= -730*(myIndex-index);
+                   animate(offset);        
+                   index = myIndex; 
+                   showButton();
+         }
+      }
+      container.onmouseover=stop;
+      container.onmouseout=play;
+      play();
+	}
 </script>
 </body>
 </html>

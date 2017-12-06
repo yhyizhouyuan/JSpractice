@@ -11,19 +11,19 @@ window.onload=function(){
     stop.onclick=stopFun;
 
    // 键盘事件
-   document.onkeyup=function(event){
-      event = event || window.event;
-      if(event.keyCode==13){
-         if(flag==0){
-           playFun();
-           flag=1;
-         }else{
-           stopFun();
-           flag=0;
-         }
-      }
-   }
-}
+//    document.onkeyup=function(event){
+//       event = event || window.event;
+//       if(event.keyCode==13){
+//          if(flag==0){
+//            playFun();
+//            flag=1;
+//          }else{
+//            stopFun();
+//            flag=0;
+//          }
+//       }
+//    }
+// }
 
 function playFun(){
 	var title=document.getElementById('title');
