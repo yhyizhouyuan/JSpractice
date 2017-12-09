@@ -12,3 +12,118 @@ body {
     color: #555;
     -webkit-font-smoothing: antialiased;
 }
+/*style*/
+
+.slider,
+.slider .main,
+.slider .main .main-i {
+    width: 100%;
+    position: relative;
+}
+
+.slider .main {
+    overflow: hidden;
+}
+
+.slider .main .main-i {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    opacity: 0;
+    -webkit-transition: all .5s;
+}
+
+.slider .main .from_right {
+    right: 50%;
+}
+
+.slider .main .from_left {
+    right: -50%;
+}
+
+#main_bg,
+.slider .main .main-i_active {
+    right: 0;
+    opacity: 1;
+}
+
+.slider .main .main-i .caption {
+    position: absolute;
+    top: 30%;
+    right: 65%;
+}
+
+.slider .main .main-i .caption h2 {
+    color: #b5b5b5;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: right;
+    margin-right: 50px;
+    opacity: 0;
+}
+
+.slider .main .main-i_active .caption h2 {
+    margin-right: 0;
+    -webkit-transition: all 1s .8s;
+    opacity: 1;
+}
+
+.slider .main .main-i .caption h3 {
+    color: #000;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: right;
+    font-family: "Open Sans Condensed";
+    margin-right: -50px;
+    opacity: 0;
+}
+
+.slider .main .main-i_active .caption h3 {
+    margin-right: 0;
+    -webkit-transition: all 1s .8s;
+    opacity: 1;
+}
+
+.slider .main .main-i img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slider .ctrl {
+    width: 100%;
+    height: 13px;
+    line-height: 13px;
+    text-align: center;
+    position: absolute;
+    bottom: -13px;
+}
+
+.slider .ctrl .ctrl-i {
+    display: inline-block;
+    width: 10%;
+    height: 13px;
+    background-color: #666;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+    position: relative;
+    margin-right: 1px;
+}
+
+.slider .ctrl .ctrl-i img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: all .2s;
+}
+
+.slider .ctrl .ctrl-i:hover {
+    background-color: #f0f0f0;
+}
+
+.slider .ctrl .ctrl-i:hover img {
+    bottom: 13px;
+    opacity: 1;
