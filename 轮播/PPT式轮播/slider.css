@@ -127,6 +127,7 @@ body {
 .slider .ctrl .ctrl-i:hover img {
     bottom: 13px;
     opacity: 1;
+    
        -webkit-box-reflect: below 0 -webkit-gradient(
             linear,
             left top,
