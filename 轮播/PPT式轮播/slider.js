@@ -94,3 +94,45 @@ function initSliders() {
             .replace(/{{imgSrc}}/g, fakeData[i]['imgSrc']);
         out_ctrl.push(_tpl_ctrl);
     }
+   // #main_bg
+    _$("#template_main").innerHTML += tpl_main
+        .replace(/{{index}}/g, 'bg')
+        .replace(/{{imgSrc}}/g, fakeData[0]['imgSrc'])
+        .replace(/{{h2Text}}/g, '')
+        .replace(/{{h3Text}}/g, '')
+        .replace(/{{from_left_or_right}}/g, '');
+
+
+    _$("#template_main").innerHTML += out_main.join('');
+    _$("#template_ctrl").innerHTML += out_ctrl.join('');
+}
+
+
+function switchSlider(index) {
+    index = parseInt(index);
+    if (!index) {
+        index = 0;
+    }
+    var main = _$("#main_" + index);
+    var ctrl = _$("#ctrl_" + index);
+
+    // 激活标识, 先全清再添加
+    var main_to_clear = _$(".main-i");
+    var ctrl_to_clear = _$(".ctrl-i");
+    var i;
+    for (i = 0; i < main_to_clear.length; i++) {
+        main_to_clear[i].className = main_to_clear[i].className.replace(" main-i_active", "");
+    }
+
+    for (i = 0; i < ctrl_to_clear.length; i++) {
+        ctrl_to_clear[i].className = ctrl_to_clear[i].className.replace(" ctrl-i_active", "");
+    }
+
+    main.className += " main-i_active";
+    ctrl.className += " ctrl-i_active";
+
+    // 背景滞留效果
+    setTimeout(function () {
+        _$("#main_bg").innerHTML = main.innerHTML;
+    }, 1000);
+}
