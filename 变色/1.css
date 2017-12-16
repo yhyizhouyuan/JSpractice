@@ -1,0 +1,21 @@
+/* CSS Document */
+input{
+margin:0 650px; 
+width:100px;
+height:30px;}
+
+#btn{
+height::19px;
+width:50px;}
+
+#skin{
+width:550px;
+height:600px;
+margin:0 auto;}
+
+.div1{
+float:right;
+width:100px;
+height:100px;
+margin-right:10px;
+background-color:#CC0000;}
